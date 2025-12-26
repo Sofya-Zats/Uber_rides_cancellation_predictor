@@ -1,0 +1,21 @@
+,Booking_Status,Vehicle_Type,Pickup_Location,Drop_Location,Booking_Value,Ride_Distance,Day,Month,Day_of_week,Hour,Vehicle_Type_encoded,Pickup_Location_encoded,Drop_Location_encoded
+0,1,Prime Sedan,Tumkur Road,RT Nagar,444,0,26,7,4,14,5,43,34
+1,0,Bike,Magadi Road,Varthur,158,13,25,7,3,22,1,26,45
+2,0,Prime SUV,Sahakar Nagar,Varthur,386,40,30,7,1,19,4,39,45
+3,1,eBike,HSR Layout,Vijayanagar,384,0,22,7,0,3,6,11,46
+4,0,Mini,Rajajinagar,Chamarajpet,822,45,2,7,1,9,2,35,5
+5,0,Mini,Kadugodi,Vijayanagar,173,41,13,7,5,4,2,20,46
+6,0,Bike,Tumkur Road,Whitefield,140,49,23,7,1,9,1,43,47
+7,1,Prime Plus,Bannerghatta Road,Sarjapur Road,344,0,11,7,3,11,3,2,40
+9,1,Auto,RT Nagar,Varthur,893,0,18,7,3,1,0,34,45
+10,0,Prime Plus,Hosur Road,Jayanagar,164,46,29,7,0,23,3,14,18
+11,0,Prime Plus,Kammanahalli,Rajajinagar,399,18,26,7,4,4,3,21,35
+12,0,Auto,Cox Town,Yelahanka,330,8,27,7,5,13,0,7,48
+13,1,Auto,Hosur Road,Banashankari,427,0,17,7,2,18,0,14,1
+14,0,Bike,Indiranagar,MG Road,378,18,16,7,1,9,1,16,25
+15,0,Bike,Magadi Road,HSR Layout,343,23,2,7,1,10,1,26,11
+17,0,Bike,Electronic City,Langford Town,401,8,5,7,4,23,1,9,24
+18,0,Prime SUV,Magadi Road,RT Nagar,343,17,9,7,1,11,4,26,34
+19,0,eBike,Koramangala,Sarjapur Road,2014,33,12,7,4,14,6,23,40
+20,0,eBike,Basavanagudi,Hulimavu,650,34,11,7,3,20,6,3,15
+21,0,Prime Sedan,Padmanabhanagar,Jayanagar,231,2,8,7,0,22,5,32,18
