@@ -5,9 +5,10 @@ Created on Mon Dec 15 15:47:49 2025
 @author: SOFYA
 """
 
-import pandas as pd
+
 
 def run():
+    import pandas as pd
     print("Loading data...")
     bookings=pd.read_csv("data/Bookings.csv")
     
@@ -15,28 +16,8 @@ def run():
     
     
     #STEP 0:EXPLORATORY ANALYSIS OF DATA SET
-    bookings["Booking_ID"].nunique() 
-    
-    bookings["Booking_Status"].value_counts() 
-    
-    bookings["Vehicle_Type"].value_counts() 
-    
-    
-    bookings["Pickup_Location"].value_counts() 
-    bookings["Drop_Location"].value_counts() 
-    
-    
-    
-    
-    bookings["Canceled_Rides_by_Customer"].value_counts() 
-    
-    bookings["Canceled_Rides_by_Driver"].value_counts() 
-    
-    bookings["Incomplete_Rides_Reason"].value_counts() 
-    
-    bookings["Customer_Rating"].value_counts() 
-    
-    
+   
+   
     #Checking percentage of unknown values in Driver_Ratings and Customer_Rating columns
     Driver_Rating_empty_perc=bookings["Driver_Ratings"].isna().sum()/bookings["Driver_Ratings"].size*100
     print(f"Unknown values for driver rating occupy {Driver_Rating_empty_perc:.2f} % of all values")
@@ -49,7 +30,7 @@ def run():
     # both driver rating and customer rating are not empty
     rating_known=bookings.dropna(subset=["Customer_Rating","Driver_Ratings" ])
     rating_known_perc=rating_known.size/bookings.size*100
-    print(f"Rows with knownvalues for customer rating and driver  occupy {rating_known_perc:.2f} % of all values")
+    print(f"Rows with known values for customer rating and driver  occupy {rating_known_perc:.2f} % of all values")
     
     #STEP 1:CLEANING DATA
     
@@ -103,6 +84,13 @@ def run():
                                     "Driver_Ratings",
                                     "Customer_Rating"
                                     ])
+    
+    #2 Converting columns to int32 format top reduce data set weight    
+    int_cols = bookings_with_text_columns.select_dtypes(include="int64").columns
+    bookings_with_text_columns[int_cols] =  bookings_with_text_columns[int_cols].astype("int32")
+    
+    int_cols =  bookings_for_cancel_pred_model.select_dtypes(include="int64").columns
+    bookings_for_cancel_pred_model[int_cols] =  bookings_for_cancel_pred_model[int_cols].astype("int32")
     
     bookings_with_text_columns.to_csv("data/bookings_with_text_columns.csv")
     bookings_for_cancel_pred_model.to_csv("data/bookings_for_cancel_pred_model.csv")

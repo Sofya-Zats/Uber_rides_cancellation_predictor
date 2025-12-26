@@ -13,21 +13,22 @@ Created on Thu Nov 27 16:17:21 2025
 @author: SOFYA
 """
 #IMPORING PACKAGES
-import pandas as pd
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.utils import shuffle
-from sklearn.model_selection import train_test_split, KFold
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
-from sklearn.inspection import permutation_importance
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.model_selection import GridSearchCV
 
 
 def run():
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pickle
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.utils import shuffle
+    from sklearn.model_selection import train_test_split, KFold
+    from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+    from sklearn.inspection import permutation_importance
+    from sklearn.preprocessing import OneHotEncoder
+    from sklearn.model_selection import GridSearchCV
+    
+
     #1.IMPORING DATA
     data=pd.read_csv("data/bookings_for_cancel_pred_model.csv",index_col=0)
     
@@ -135,8 +136,8 @@ def run():
     
     plt.show()
     
-    import pickle
-    pickle.dump(clf,open("Cancellations_prediction_model.p", "wb"))
+   
+    pickle.dump(clf,open("model/Cancellations_prediction_model.p", "wb"))
     
     
     
@@ -182,7 +183,7 @@ def run():
     
     
     #Barchart feature-importance
-    import matplotlib.pyplot as plt
+    
     
     plt.barh(feature_importance_summary["feature_name"],feature_importance_summary["importance_score"],color="salmon" )
     plt.title("Feature Importance of Random Forest")
@@ -283,11 +284,11 @@ def run():
     bundle = {"model": clf, "threshold": float(best_threshold)}
     
     #Exporting pair  it into pickle file
-    with open("Cancellations_prediction_model_with_threshold.pkl", "wb") as f:
+    with open("model/Cancellations_prediction_model_with_threshold.pkl", "wb") as f:
         pickle.dump(bundle, f)
     
     #Exporting only a model  without the best threshold
-    pickle.dump(clf,open("Cancellations_prediction_model.p", "wb"))
+    pickle.dump(clf,open("model/Cancellations_prediction_model.p", "wb"))
     
     #Exporting data for model(data without text columns)
     
@@ -295,26 +296,10 @@ def run():
     
     #Creating pipeline for our model
     import joblib
-    joblib.dump(clf, "Streamlit/model.joblib")
+    joblib.dump(clf, "Streamlit/model.joblib"  , compress=3)###
     
-    """
-    Snippet that you should use to upload model and best theshold and use it to make predictions:
-        
-    import pickle
-    import numpy as np
-    
-    with open("rf_with_threshold.pkl", "rb") as f:
-        bundle = pickle.load(f)
-    
-    clf = bundle["model"]
-    thr = bundle["threshold"]
-    
-    y_proba_new = clf.predict_proba(X_new)[:, 1]
-    y_pred_new = (y_proba_new >= thr).astype(int)
-    """
-    data_for_model.info()
-    
-    data_for_model["Ride_Distance"].mean()
+   
+  
 
 
  

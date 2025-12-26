@@ -5,13 +5,14 @@ Created on Mon Dec 22 21:15:38 2025
 @author: SOFYA
 """
 
-import streamlit as st
-import pandas as pd
-import joblib
+
 
 
 
 def run():
+    import streamlit as st
+    import pandas as pd
+    import joblib
     st.set_page_config(page_title="Prediction App", layout="centered")
     
     #UPLOADING OUR PRETRAINED MODEL
@@ -23,20 +24,10 @@ def run():
     
     #ADDING INTERFACE ELEMENTS TO THE STREAMLIT PAGE
     
+   
+        
+        
     
-    i=1
-    days=[]
-    while i<32:
-        days.append(i) 
-        i=i+1
-        
-        
-    h=0
-    hours=[]
-    while h<24:
-        hours.append(h) 
-        h=h+1
-        
     #UPLOADING FILE WITH ORIGINAL TEXT COLUMNS (BEFORE WE ENCODED THEM INTO NUMERICAL FORMAT)
     bookings_with_text_columns=pd.read_csv("data/bookings_with_text_columns.csv",index_col=0)
     bookings_with_text_columns.info()
@@ -48,7 +39,17 @@ def run():
     
     Booking_Value = st.number_input("Booking_Value (numeric)", value=549)
     Ride_Distance = st.number_input("Ride_Distance (numeric)", value=15.7)
+    
+    
+     
+    i=1
+    days=[]
+    while i<32:
+        days.append(i) 
+        i=i+1
     Day= st.selectbox("Day:", (days))
+    
+    
     Month_str= st.selectbox("Month:", ("January","February","March","April",
                                    "May","June","July","August","September",
                                    "October","November","December")  )
@@ -80,8 +81,13 @@ def run():
     elif Day_of_week_str=="Sunday" :Day_of_week=6
     
     
-    
+    h=0
+    hours=[]
+    while h<24:
+        hours.append(h) 
+        h=h+1
     Hour= st.selectbox("Hour", hours)  
+   
     
     Vehicle_Type_str= st.selectbox("Vehicle_Type",("Prime Sedan","eBike","Auto","Prime Plus","Bike","Prime SUV","Mini" )    )
     if Vehicle_Type_str=="Auto":Vehicle_Type=0
@@ -112,15 +118,8 @@ def run():
               Drop_Location=l[1] 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    # Build one-row DataFrame with EXACT column names used in training
+   
+    # Building one-row DataFrame with axact column names used in training
     input_df = pd.DataFrame([{
         "Booking_Value": Booking_Value,
         "Ride_Distance": Ride_Distance,
