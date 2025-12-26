@@ -128,8 +128,8 @@ input_df = pd.DataFrame([{
 #Making prediction based on the input 
 if st.button("Predict"):
    
-    proba = model.predict_proba(input_df)[0][1]
-    probability=model.predict_proba(input_df)[0][0]
+    proba = round(model.predict_proba(input_df)[0][1],2)
+    probability=round(model.predict_proba(input_df)[0][0],2)
     pred = int(proba >= 0.5)  # threshold can be changed
     prediction=""
     if pred==0:
@@ -137,7 +137,7 @@ if st.button("Predict"):
     elif pred==1:
        prediction="Most likely this ride won't be cancelled" 
     st.subheader("Result")
-    st.write(f"Prediction: **{prediction:.3f}**")
-    st.write(f"Probability of CANCELLATION: **{probability*100:.3f} %**")
+    st.write(f"Prediction: **{prediction}**")
+    st.write(f"Probability of CANCELLATION: **{probability*100} %**")
     
 
