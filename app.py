@@ -5,11 +5,11 @@ Created on Mon Dec 22 21:15:38 2025
 
 @author: SOFYA
 """
-st.set_page_config(page_title="Prediction App", layout="centered")
+
 import streamlit as st
 import pandas as pd
 import joblib
-
+st.set_page_config(page_title="Prediction App", layout="centered")
 
 #UPLOADING OUR PRETRAINED MODEL
 @st.cache_resource
