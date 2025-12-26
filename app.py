@@ -137,7 +137,7 @@ if st.button("Predict"):
     elif pred==1:
        prediction="Most likely this ride won't be cancelled" 
     st.subheader("Result")
-    st.write(f"Prediction: **{prediction}**")
-    st.write(f"Probability of CANCELLATION: **{probability*100} %**")
+    st.write(f"Prediction: **{prediction:.3f}**")
+    st.write(f"Probability of CANCELLATION: **{probability*100:.3f} %**")
     
 
