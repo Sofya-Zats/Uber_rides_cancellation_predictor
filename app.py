@@ -34,7 +34,7 @@ Booking_Value = st.number_input("Booking_Value (numeric)", value=549)
 Ride_Distance = st.number_input("Ride_Distance (numeric)", value=15.7)
 
 
-######currently working on:
+
 d = st.date_input("When was the ride requested?", datetime.date(2019, 7, 6))
 Day=d.day
 Month=d.month
