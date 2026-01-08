@@ -1,15 +1,10 @@
 
-# -*- coding: utf-8 -*-
+
 """
 Created on Mon Dec 22 21:15:38 2025
 
 @author: SOFYA
 """
-
-
-
-
-
 
 import streamlit as st
 import pandas as pd
@@ -140,19 +135,18 @@ input_df = pd.DataFrame([{
 #Making prediction based on the input 
 if st.button("Predict"):
    
-    proba = model.predict_proba(input_df)[0][1]
-    probability=model.predict_proba(input_df)[0][0]
+
+    proba = round(model.predict_proba(input_df)[0][1],2)
+    probability=round(model.predict_proba(input_df)[0][0],2)
     pred = int(proba >= 0.5)  # threshold can be changed
     prediction=""
     if pred==0:
-        prediction="Most likely this ride will be cancelled"
+            prediction="Most likely this ride won't be cancelled"
     elif pred==1:
-       prediction="Most likely this ride won't be cancelled" 
+           prediction="Most likely this ride will be cancelled" 
     st.subheader("Result")
     st.write(f"Prediction: **{prediction}**")
-    st.write(f"Probability of CANCELLATION: **{probability}**")
+
+    st.write(f"Probability of ride being cancelled: **{proba:.3f}**")
     
-
-
-
 
