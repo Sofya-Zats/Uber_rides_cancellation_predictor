@@ -40,8 +40,6 @@ Day=d.day
 Month=d.month
 Day_of_week=d.weekday()
 
-type(Day)
-f_temp=1
 
 h=0
 hours=[]
