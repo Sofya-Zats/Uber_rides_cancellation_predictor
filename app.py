@@ -44,46 +44,7 @@ Day_of_week=d.weekday
 ####
 
 
-"""
-i=1
-days=[]
-while i<32:
-    days.append(i) 
-    i=i+1
-Day= st.selectbox("Day:", (days))
 
-
-Month_str= st.selectbox("Month:", ("January","February","March","April",
-                               "May","June","July","August","September",
-                               "October","November","December")  )
-
-if Month_str=="January": Month=1
-elif Month_str=="February" :Month=2
-elif Month_str=="March" :Month=3
-elif Month_str=="April" :Month=4
-elif Month_str=="May" :Month=5
-elif Month_str=="June" :Month=6
-elif Month_str=="July" :Month=7
-elif Month_str=="August" :Month=8
-elif Month_str=="September" :Month=9
-elif Month_str=="October" :Month=10
-elif Month_str=="November" :Month=11
-elif Month_str=="December" :Month=12           
-     
-    
-
-Day_of_week_str= st.selectbox("Day_of_week", ("Monday","Tuesday","Wednesday",
-                                          "Thursday","Friday",
-                                          "Saturday","Sunday"))
-if Day_of_week_str=="Monday": Day_of_week=0
-elif Day_of_week_str=="Tuesday" :Day_of_week=1
-elif Day_of_week_str=="Wednesday" :Day_of_week=2
-elif Day_of_week_str=="Thursday" :Day_of_week=3
-elif Day_of_week_str=="Friday" :Day_of_week=4
-elif Day_of_week_str=="Saturday" :Day_of_week=5
-elif Day_of_week_str=="Sunday" :Day_of_week=6
-
-"""
 
 h=0
 hours=[]
