@@ -36,12 +36,15 @@ Ride_Distance = st.number_input("Ride_Distance (numeric)", value=15.7)
 
 ######currently working on:
 d = st.date_input("When was the ride requested?", datetime.date(2019, 7, 6))
+Day=d.day()
+Month=d.month()
+Day_of_week=d.weekday()
 
 
 ####
 
 
-
+"""
 i=1
 days=[]
 while i<32:
@@ -80,6 +83,7 @@ elif Day_of_week_str=="Friday" :Day_of_week=4
 elif Day_of_week_str=="Saturday" :Day_of_week=5
 elif Day_of_week_str=="Sunday" :Day_of_week=6
 
+"""
 
 h=0
 hours=[]
