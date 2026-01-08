@@ -140,9 +140,10 @@ def run():
         pred = int(proba >= 0.5)  # threshold can be changed
         prediction=""
         if pred==0:
-            prediction="most likely this ride will be cancelled"
+            prediction="Most likely this ride won't be cancelled"
         elif pred==1:
-           prediction="most likely this ride won't be cancelled" 
+           prediction="Most likely this ride will be cancelled" 
         st.subheader("Result")
         st.write(f"Prediction: **{prediction}**")
+
         st.write(f"Probability of ride being cancelled: **{proba:.3f}**")
