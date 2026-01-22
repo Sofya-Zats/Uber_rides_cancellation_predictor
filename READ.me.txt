@@ -1,0 +1,34 @@
+🚗 Uber Ride Cancellation Predictor
+
+💼Business Goal 
+
+Cancelled rides cause revenue loss for the company and for the divers. Predicting rides with high cancellation risk at the moment when customer and driver were matched will allow the matching algorithm to reassign a different driver to these high-risk rides and improve driver utilization thus reducing revenue loss.
+
+
+📌 Project Overview
+
+This project builds a machine learning model and trains it on .csv file with historical Uber bookings data to predict probability of weather or not each new Uber ride will be cancelled.
+
+
+🗂️Key stages:
+
+-Data Cleaning (handling missing values, encoding categorical values, working with datetime data in pandas)
+
+-Feature engineering with customer-level data
+-Training a machine learning (ML) model
+-Building an end-to-end ML pipeline 
+-Deploying an ML model using Streamlit to demonstrate model's performance
+
+
+👉 Live demo: https://uberridescancellationpredictor.streamlit.app/
+   
+⚠️ Important note:
+The current version of this project is not fully leakage-free. Some  features use information that would not be available at the time of a real ride request. Handling data leaks is the next goal of this project
+
+
+
+
+
+👩‍💻 Author
+Sofya Zats
+Aspiring Data Engineer
